@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- your webpage info goes here -->
+
+    <title>Emergency Medical System</title>
+	
+	<meta name="author" content="your name" />
+	<meta name="description" content="" />
+
+<!-- you should always add your stylesheet (css) in the head tag so that it starts loading before the page html is being displayed -->	
+	<link rel="stylesheet" href="../style.css" type="text/css" />
+	
+</head>
+<body>
+
+<!-- webpage content goes here in the body -->
+
+	<div id="page">
+		<div id="logo">
+			<h1>Emergency Medical System</h1>
+		</div>
+		<div id="nav">
+			<ul>
+                <li><a href="../website.html">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../Doctor_Directory.html">Doctor Directory</a></li>
+                <li><a href="../FAQ.html">FAQ</a></li>
+                <div class="dropdown">
+                    <li><a<button onclick="patientDrop()" class="dropbtn">Patient Pages</button></a></li>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="../Account_Information.html">Account Information</a>
+                        <a href="../Reservations.html">Reservations</a>
+                    </div>
+                    <div class="dropdown2">
+                        <li><a<button onclick="staffDrop()" class="dropbtn2">Staff Pages</button></a></li>
+                        <div id="myDropdown2" class="dropdown-content2">
+                            <a href="../Pt_dir.thml">Patient Directory</a>
+                            <a href="../processPayment.html">Process Payment</a>
+                            <a href="../confirmRes.html">Patient Reservations</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <script>
+                    function patientDrop() {
+                        document.getElementById("myDropdown").classList.toggle("show");
+                    }
+                
+                function staffDrop() {
+                    document.getElementById("myDropdown2").classList.toggle("show");
+                }
+                
+                // Close the dropdown menu if the user clicks outside of it
+                window.onclick = function(event) {
+                    if (!event.target.matches('.dropbtn')) {
+                        
+                        var dropdowns = document.getElementsByClassName("dropdown-content");
+                        var i;
+                        for (i = 0; i < dropdowns.length; i++) {
+                            var openDropdown = dropdowns[i];
+                            if (openDropdown.classList.contains('show')) {
+                                openDropdown.classList.remove('show');
+                            }
+                            
+                        }
+                    }
+                    if (!event.target.matches('.dropbtn2')) {
+                        
+                        var dropdowns = document.getElementsByClassName("dropdown-content2");
+                        var i;
+                        for (i = 0; i < dropdowns.length; i++) {
+                            var openDropdown = dropdowns[i];
+                            if (openDropdown.classList.contains('show')) {
+                                openDropdown.classList.remove('show');
+                            }
+                            
+                        }
+                    }
+                }
+                
+                    </script>
+            </ul>	
+        </div>
+		<h2>>Doctor Profile<</h2>
+		<div id="content">
+			<p>
+				<img src="../Avatars/meredithRoberts.png">
+			</p>
+			<table class = tableProf>
+				<h3>FACTS & QUALIFICATIONS</h3>
+                <tr><td>NAME- MEREDITH ROBERTS</td></tr>
+                <tr><td>EXPERIENCE- 11 YEARS</td></tr>
+                <tr><td>EDUCATION- WEILL CORNELL MEDICAL</td></tr>
+                <tr><td>PHONE #- 210-555-5555</td></tr>
+                <tr><td>EMAIL- MEREDITH.R@EMS.net</td></tr>
+			</table>
+			<p>
+				<a href="../Doctor_Directory.html" class="button">RETURN</a>
+			</p>
+		</div>
+	<br></div>
+	<div id="footer">
+	<p>
+		Web Application developed by [CS3423-Team8]
+
+	</p>
+	</div>
+</body>
+</html>
