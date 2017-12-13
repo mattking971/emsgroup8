@@ -12,9 +12,15 @@ $psw-repeat=$_POST['psw-repeat'];
 mysql_connect('localhost','root','Duq350');
 mysql_select_db("Patient");
 
-$select="insert into patientInfo(firstName,lastName,DOB,email,address,insComp,userID,psw,psw-repeat) values('".$firstName"','".$lastName"','".$DOB"','".$email"','".$address"','".$insComp"','".$userID"','".$psw"','".$psw-repeat"')";
+$query = "SELECT * FROM `patientList` WHERE `uID`='$uID' and `uPass`='$uPass'"
 
-$sql=mysql_query($select)
+
+$sql=mysql_query($query)
+if($sql){
+header('Location: signUP.html');
+}else{
+header('Location: website.html');
+}
 mysql_close();
 
 ?>
