@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- your webpage info goes here -->
+
+    <title>Emergency Medical System</title>
+	
+	<meta name="author" content="your name" />
+	<meta name="description" content="" />
+
+<!-- you should always add your stylesheet (css) in the head tag so that it starts loading before the page html is being displayed -->	
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	
+</head>
+<body>
+
+<!-- webpage content goes here in the body -->
+
+	<div id="page">
+		<div id="logo">
+			<h1>Emergency Medical System</h1>
+		</div>
+		<div id="nav">
+			<ul>
+                <li><a href="website.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="Doctor_Directory.html">Doctor Directory</a></li>
+                <li><a href="FAQ.html">FAQ</a></li>
+                <div class="dropdown">
+                    <li><a<button onclick="patientDrop()" class="dropbtn">Patient Pages</button></a></li>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="Account_Information.html">Account Information</a>
+                        <a href="Reservations.html">Reservations</a>
+                    </div>
+                    <div class="dropdown2">
+                        <li><a<button onclick="staffDrop()" class="dropbtn2">Staff Pages</button></a></li>
+                        <div id="myDropdown2" class="dropdown-content2">
+                            <a href="Pt_dir.html">Patient Directory</a>
+                            <a href="processPayment.html">Process Payment</a>
+                            <a href="confirmRes.html">Patient Reservations</a>
+                            <a href="docNaptNotes.html">Appointment Notes/Docs</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <script>
+                    function patientDrop() {
+                        document.getElementById("myDropdown").classList.toggle("show");
+                    }
+                
+                function staffDrop() {
+                    document.getElementById("myDropdown2").classList.toggle("show");
+                }
+                
+                // Close the dropdown menu if the user clicks outside of it
+                window.onclick = function(event) {
+                    if (!event.target.matches('.dropbtn')) {
+                        
+                        var dropdowns = document.getElementsByClassName("dropdown-content");
+                        var i;
+                        for (i = 0; i < dropdowns.length; i++) {
+                            var openDropdown = dropdowns[i];
+                            if (openDropdown.classList.contains('show')) {
+                                openDropdown.classList.remove('show');
+                            }
+                            
+                        }
+                    }
+                    if (!event.target.matches('.dropbtn2')) {
+                        
+                        var dropdowns = document.getElementsByClassName("dropdown-content2");
+                        var i;
+                        for (i = 0; i < dropdowns.length; i++) {
+                            var openDropdown = dropdowns[i];
+                            if (openDropdown.classList.contains('show')) {
+                                openDropdown.classList.remove('show');
+                            }
+                            
+                        }
+                    }
+                }
+                
+                    </script>
+            </ul>	
+        </div>
+		<h2>>Patient Directory<</h2>
+		<div id="content">
+			<p>
+            
+            <table align= "center">
+                <tr>
+                    <th><ins>FIRST NAME</ins></th>
+                    <th><ins>LAST NAME</ins></th>
+                    <th><ins>DATE OF BIRTH</ins></th>
+                    <th><ins>EMAIL</ins></th>
+                    <th><ins>ADDRESS</ins></th>
+                    <th><ins>INSURANCE</ins></th>
+                    <th><ins>USER ID</ins></th>
+                    <th><ins>PASSWORD</ins></th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></a></td>
+                </tr>
+            
+           <!-- 
+            EXAMPLE #1
+            <?php
+                $server = mysql_connect("server", "username", "password");
+                $db = mysql_select_db("ni354077_2sql1", $server);
+                $query = mysql_query("SELECT * FROM Jobs");
+                ?>
+            
+            <table>
+                <tr>
+                    <td>AuftragsID</td>
+                    <td>Startort</td>
+                    <td>Zielort</td>
+                    <td>Gewicht</td>
+                    <td>Fracht</td>
+                </tr>
+                
+                <?php
+                    while ($row = mysql_fetch_array($query)) {
+                        echo "<tr>";
+                        echo "<td>".$row[AuftragsID]."</td>";
+                        echo "<td>".$row[Startort]."</td>";
+                        echo "<td>".$row[Zielort]."</td>";
+                        echo "<td>".$row[Gewicht]."</td>";
+                        echo "<td>".$row[Fracht]."</td>";
+                        echo "</tr>";
+                    }
+                
+                    ?>
+            </table>     
+            
+            
+            
+            EXAMPLE #2
+            <?php
+            include("conn.php");
+            //$query = "select field1, fieldn from table [where clause][group by clause][order by clause][limit clause]";
+            
+            $query = "select * from kids";
+            $result = conn($query);
+            if (($result)||(mysql_errno == 0))
+            {
+            echo "<table width='100%'><tr>";
+            if (mysql_num_rows($result)>0)
+            {
+            //loop thru the field names to print the correct headers
+            $i = 0;
+            while ($i < mysql_num_fields($result))
+            {
+            echo "<th>". mysql_field_name($result, $i) . "</th>";
+            $i++;
+            }
+            echo "</tr>";
+            
+            //display the data
+            while ($rows = mysql_fetch_array($result,MYSQL_ASSOC))
+            {
+            echo "<tr>";
+            foreach ($rows as $data)
+            {
+            echo "<td align='center'>". $data . "</td>";
+            }
+            }
+            }else{
+            echo "<tr><td colspan='" . ($i+1) . "'>No Results found!</td></tr>";
+            }
+            echo "</table>";
+            }else{
+            echo "Error in running query :". mysql_error();
+            }
+            ?>
+            ALL OF THIS IS AN EXAMPLE OF TABLE TO BE FILLED FROM DATABASE-->
+			</p>
+		</div>
+	</div>
+	<div id="footer">
+	<p>
+		Web Application developed by [CS3423-Team8]
+
+	</p>
+	</div>
+</body>
+</html>

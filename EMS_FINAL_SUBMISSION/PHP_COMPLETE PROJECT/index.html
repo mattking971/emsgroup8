@@ -1,0 +1,141 @@
+<!-- you should always add your stylesheet (css) in the head tag so that it starts loading before the page html is being displayed -->	
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	
+</head>
+<body>
+
+<!-- webpage content goes here in the body -->
+
+	<div id="page">
+		<div id="logo">
+			<h1>Emergency Medical System</h1>
+		</div>
+		<div id="nav">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+				<li><a href="Doctor_Directory.html">Doctor Directory</a></li>
+				<li><a href="FAQ.html">FAQ</a></li>
+                <div class="dropdown">
+                    <li><a<button onclick="patientDrop()" class="dropbtn">Patient Pages</button></a></li>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="Account_Information.html">Account Information</a>
+                        <a href="Reservations.html">Reservations</a>
+                    </div>
+                 <div class="dropdown2">
+                    <li><a<button onclick="staffDrop()" class="dropbtn2">Staff Pages</button></a></li>
+                    <div id="myDropdown2" class="dropdown-content2">
+                        <a href="Pt_dir.html">Patient Directory</a>
+                        <a href="processPayment.html">Process Payment</a>
+                        <a href="confirmRes.php">Patient Reservations</a>
+                        <a href="docNaptNotes.html">Appointment Notes/Docs</a>
+                    </div>
+                  </div>
+                 </div>
+                
+                    <script>
+                        var patient = true;
+                        var staff = true;
+                    if(user = true)
+                    {
+                        function patientDrop() {
+                            document.getElementById("myDropdown").classList.toggle("show");
+                        }
+                    }
+                    if(staff  = true)
+                    {
+                        function staffDrop() {
+                            document.getElementById("myDropdown2").classList.toggle("show");
+                        }
+                    }
+                    // Close the dropdown menu if the user clicks outside of it
+                    window.onclick = function(event) {
+                    if (!event.target.matches('.dropbtn')) {
+                    
+                    var dropdowns = document.getElementsByClassName("dropdown-content");
+                    var i;
+                    for (i = 0; i < dropdowns.length; i++) {
+                        var openDropdown = dropdowns[i];
+                        if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                                }
+                        
+                            }
+                        }
+                    if (!event.target.matches('.dropbtn2')) {
+                        
+                        var dropdowns = document.getElementsByClassName("dropdown-content2");
+                        var i;
+                        for (i = 0; i < dropdowns.length; i++) {
+                            var openDropdown = dropdowns[i];
+                            if (openDropdown.classList.contains('show')) {
+                                openDropdown.classList.remove('show');
+                            }
+                            
+                        }
+                    }
+
+                    }
+                    </script>
+			</ul>	
+		</div>
+		<h2>>Home Page<</h2>
+		<div id="content">
+            <div class="slideshow-container" style="float:left;">
+                <div class="mySlides fade"> <img src= "slides/slideshow1.jpg" width="400" height="400" border="3"></div>
+                <div class="mySlides fade"><img src= "slides/slideshow2.jpeg" width="400" height="400" border="3"></div>
+                <div class="mySlides fade"><img src= "slides/slideshow3.jpeg" width="400" height="400" border="3"></div>
+            </div>
+            <div class="slideshow-container" style="float:right;">
+                <div class="mySlides2 fade"> <img src= "slides/slideshow4.jpeg" width="400" height="400" border="3"></div>
+                <div class="mySlides2 fade"><img src= "slides/slideshow5.jpeg" width="400" height="400" border="3"></div>
+                <div class="mySlides2 fade"><img src= "slides/slideshow6.jpeg" width="400" height="400" border="3"></div>
+            </div>
+            <script>
+                var slideIndex = 0;
+                showSlides();
+                
+                function showSlides() {
+                    var i;
+                    var slides = document.getElementsByClassName("mySlides");
+                    var slides2 = document.getElementsByClassName("mySlides2");
+                    var dots = document.getElementsByClassName("dot");
+                    var dots2 = document.getElementsByClassName("dot2");
+                    for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";
+                    }
+                    for (i = 0; i < slides2.length; i++) {
+                        slides2[i].style.display = "none";
+                    }
+                    slideIndex++;
+                    if (slideIndex > slides.length) {slideIndex = 1}
+                    slides[slideIndex-1].style.display = "block";
+                    slides2[slideIndex-1].style.display = "block";
+                    
+                    setTimeout(showSlides, 2500); // Change image every 2.5 seconds
+                }
+            </script>
+			<p>
+                <br><br><br><br><br>
+				<b><ins>~Welcome to Team 8's Emergency Medical System~</ins><p>
+				To access all the features please Sign-In or Sign-Up below</b></p>
+			</p>
+            <p>
+                <br>
+                
+				<a href="signUP.html" class="button">SIGN-UP</a>
+                <br><br><br><br><br>
+           </p>
+		</div>
+        </div>
+        <div id= "slideshow">
+
+        </div>
+	<div id="footer">
+	<p>
+		Web Application developed by [CS3423-Team8]
+
+	</p>
+	</div>
+</body>
+</html>
