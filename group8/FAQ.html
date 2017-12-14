@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- your webpage info goes here -->
+
+    <title>Emergency Medical System</title>
+	
+	<meta name="author" content="your name" />
+	<meta name="description" content="" />
+
+<!-- you should always add your stylesheet (css) in the head tag so that it starts loading before the page html is being displayed -->	
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	
+</head>
+<body>
+
+<!-- webpage content goes here in the body -->
+
+	<div id="page">
+		<div id="logo">
+			<h1>Emergency Medical System</h1>
+		</div>
+		<div id="nav">
+			<ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="Doctor_Directory.html">Doctor Directory</a></li>
+                <li><a href="FAQ.html">FAQ</a></li>
+                <div class="dropdown">
+                    <li><a<button onclick="patientDrop()" class="dropbtn">Patient Pages</button></a></li>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="Account_Information.html">Account Information</a>
+                        <a href="Reservations.html">Reservations</a>
+                    </div>
+                    <div class="dropdown2">
+                        <li><a<button onclick="staffDrop()" class="dropbtn2">Staff Pages</button></a></li>
+                        <div id="myDropdown2" class="dropdown-content2">
+                            <a href="Pt_dir.html">Patient Directory</a>
+                            <a href="processPayment.html">Process Payment</a>
+                            <a href="confirmRes.html">Patient Reservations</a>
+                            <a href="docNaptNotes.html">Appointment Notes/Docs</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <script>
+                    function patientDrop() {
+                        document.getElementById("myDropdown").classList.toggle("show");
+                    }
+                
+                function staffDrop() {
+                    document.getElementById("myDropdown2").classList.toggle("show");
+                }
+                
+                // Close the dropdown menu if the user clicks outside of it
+                window.onclick = function(event) {
+                    if (!event.target.matches('.dropbtn')) {
+                        
+                        var dropdowns = document.getElementsByClassName("dropdown-content");
+                        var i;
+                        for (i = 0; i < dropdowns.length; i++) {
+                            var openDropdown = dropdowns[i];
+                            if (openDropdown.classList.contains('show')) {
+                                openDropdown.classList.remove('show');
+                            }
+                            
+                        }
+                    }
+                    if (!event.target.matches('.dropbtn2')) {
+                        
+                        var dropdowns = document.getElementsByClassName("dropdown-content2");
+                        var i;
+                        for (i = 0; i < dropdowns.length; i++) {
+                            var openDropdown = dropdowns[i];
+                            if (openDropdown.classList.contains('show')) {
+                                openDropdown.classList.remove('show');
+                            }
+                            
+                        }
+                    }
+                }
+                
+                    </script>
+            </ul>	
+        </div>
+		<h2>>FAQ<</h2>
+		<div id="content">
+            <h4>HOVER OVER TEXT TO VIEW ANSWERS TO FREQUENTLY ASKED QUESTIONS</h4>
+			<p>
+            <div class="dropdownText">
+                <span>How do I sign-up to this wonderful service?</span>
+                <div class="dropdown-contentText">
+                    Go to the Home Page and follow pertaining links!
+                </div>
+            </div>
+            <br><br><br><div class="dropdownText">
+                <span>Why can't I view patient/staff pages?</span>
+                <div class="dropdown-contentText">
+                    Make sure you're signed in, as you need permission to view these pages.
+                </div>
+            </div>
+            <br><br><br><div class="dropdownText">
+                <span>How do I make an appointment/reservation?</span>
+                <div class="dropdown-contentText">
+                    There's two ways. Firstly through the patient pages dropdown, and also through
+                    the Doctor Directory Tab.
+                </div>
+            </div>
+            <br><br><br><div class="dropdownText">
+                <span>Where are is this office located?</span>
+                <div class="dropdown-contentText">
+                    Go to the about. All location information and contact information can be found here.
+                </div>
+            </div>
+			</p>
+		</div>
+	</div>
+	<div id="footer">
+		<p>
+			Web Application developed by [CS3423-Team8]
+		</p>
+	</div>
+</body>
+</html>
+

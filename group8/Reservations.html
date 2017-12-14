@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- your webpage info goes here -->
+
+    <title>Emergency Medical System</title>
+	
+	<meta name="author" content="your name" />
+	<meta name="description" content="" />
+
+<!-- you should always add your stylesheet (css) in the head tag so that it starts loading before the page html is being displayed -->	
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	
+</head>
+<body>
+
+<!-- webpage content goes here in the body -->
+
+	<div id="page">
+		<div id="logo">
+			<h1>Emergency Medical System</h1>
+		</div>
+		<div id="nav">
+			<ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="Doctor_Directory.html">Doctor Directory</a></li>
+                <li><a href="FAQ.html">FAQ</a></li>
+                <div class="dropdown">
+                    <li><a<button onclick="patientDrop()" class="dropbtn">Patient Pages</button></a></li>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="Account_Information.html">Account Information</a>
+                        <a href="Reservations.html">Reservations</a>
+                    </div>
+                    <div class="dropdown2">
+                        <li><a<button onclick="staffDrop()" class="dropbtn2">Staff Pages</button></a></li>
+                        <div id="myDropdown2" class="dropdown-content2">
+                            <a href="Pt_dir.html">Patient Directory</a>
+                            <a href="processPayment.html">Process Payment</a>
+                            <a href="confirmRes.html">Patient Reservations</a>
+                            <a href="docNaptNotes.html">Appointment Notes/Docs</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <script>
+                    function patientDrop() {
+                        document.getElementById("myDropdown").classList.toggle("show");
+                    }
+                
+                function staffDrop() {
+                    document.getElementById("myDropdown2").classList.toggle("show");
+                }
+                
+                // Close the dropdown menu if the user clicks outside of it
+                window.onclick = function(event) {
+                    if (!event.target.matches('.dropbtn')) {
+                        
+                        var dropdowns = document.getElementsByClassName("dropdown-content");
+                        var i;
+                        for (i = 0; i < dropdowns.length; i++) {
+                            var openDropdown = dropdowns[i];
+                            if (openDropdown.classList.contains('show')) {
+                                openDropdown.classList.remove('show');
+                            }
+                            
+                        }
+                    }
+                    if (!event.target.matches('.dropbtn2')) {
+                        
+                        var dropdowns = document.getElementsByClassName("dropdown-content2");
+                        var i;
+                        for (i = 0; i < dropdowns.length; i++) {
+                            var openDropdown = dropdowns[i];
+                            if (openDropdown.classList.contains('show')) {
+                                openDropdown.classList.remove('show');
+                            }
+                            
+                        }
+                    }
+                }
+                
+                    </script>
+            </ul>	
+        </div>
+		<h2>>Reservations<</h2>
+		<div id="content">
+			<p>
+				Please use the following tools and calendar to schedule an appointment:
+			</p>
+            <iframe src="https://calendar.google.com/calendar/embed?title=EMS%20Reservation%20Schedule&amp;mode=WEEK&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FChicago" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no" align="left"></iframe>
+            
+            <form action="actionpage.php" style="border:1px solid #ccc">
+                <div class="container" style= margin-left: 80px;>
+            <select name="doctors">
+                <option selected hidden>DOCTOR/SPECIALIST</option>
+                <option value="John Doe">John Doe - PEDIATRICS</option>
+                <option value="Jane Doe">Jane Doe - OTORHINOLARYNGOLOGY</option>
+                <option value="Derek Thompson">Derek Thompson - NEUROLOGY</option>
+                <option value="Meredith Roberts">Meredith Roberts - CARDIOLOGY</option>
+                <option value="Bob Griffin">Bob Griffin - NUTRITION</option>
+                <option value="Erick Chicas">Erick Chicas - DERMATOLOGY</option>
+                <option value="Pancham Shah">Pancham Shah - ORTHOPEDICS</option>
+            </select><br><br>
+            
+            <input type="date" name="appointDate"><br><br>
+                
+            <select name="time" id="time">
+            
+                    
+                <option value="07:00 AM">07:00 AM</option>
+                <option value="07:30 AM">07:30 AM</option>
+                <option value="08:00 AM">08:00 AM</option>
+                <option value="08:30 AM">08:30 AM</option>
+                <option value="09:00 AM">09:00 AM</option>
+                <option value="09:30 AM">09:30 AM</option>
+                <option value="10:00 AM">10:00 AM</option>
+                <option value="10:30 AM">10:30 AM</option>
+                <option value="11:00 AM">11:00 AM</option>
+                <option value="11:30 AM">11:30 AM</option>
+                <option value="12:30 PM">12:30 PM</option>
+                <option value="01:00 PM">01:00 PM</option>
+                <option value="01:30 PM">01:30 PM</option>
+                <option value="02:00 PM">02:00 PM</option>
+                <option value="02:30 PM">02:30 PM</option>
+                <option value="03:00 PM">03:00 PM</option>
+                <option value="03:30 PM">03:30 PM</option>
+                <option value="04:00 PM">04:00 PM</option>
+                <option value="04:30 PM">04:30 PM</option>
+                <option value="05:00 PM">05:00 PM</option>
+                <option value="05:30 PM">05:30 PM</option>
+                
+            </select><br>
+	<label><b>User ID<b></label>
+	<input type="text" style="width: 256px"name = id>
+                
+            <div class="clearfix">
+            <button type="button"  class="cancelbtn" onclick="window.location.replace('index.html')">Cancel</button>
+            <button type="submit" class="signupbtn">Request Reservation</button>
+            </div>
+            </div>
+            </form>
+        </div>
+	</div>
+	<div id="footer">
+		<p>
+			Web Application developed by [CS3423-Team8]
+		</p>
+	</div>
+</body>
+</html>
+
